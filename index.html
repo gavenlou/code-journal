@@ -16,8 +16,29 @@
 </head>
 <body>
   <header>
+    <nav class="nav">
+      Code Journal
+    </nav>
   </header>
-  <main>
+  <main class="container">
+    <div class="row">
+      <div data-view="entry-form" class="container">
+        New Entry
+        <form>
+          <label for="title">Title</label>
+          <input id="title">
+
+          <label for="photo">Photo URL</label>
+          <input id="photo">
+
+          <label for="notes">Notes</label>
+          <textarea id="notes" rows="7"></textarea>
+
+          <label for="save">Save</label>
+          <input id="save" type="submit" value="SAVE">
+        </form>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
