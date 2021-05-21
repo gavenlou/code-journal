@@ -15,27 +15,42 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
+  <header class="bar">
     <nav class="nav">
       Code Journal
     </nav>
   </header>
   <main class="container">
-    <div class="row">
-      <div data-view="entry-form" class="container">
-        New Entry
+    <div class="row column-full">
+      <div data-view="entry-form">
+        <h2>New Entry</h2>
         <form>
-          <label for="title">Title</label>
-          <input id="title">
-
-          <label for="photo">Photo URL</label>
-          <input id="photo">
-
-          <label for="notes">Notes</label>
-          <textarea id="notes" rows="7"></textarea>
-
-          <label for="save">Save</label>
+          <div class="flex">
+            <div class="column-half">
+              <img class="image" src="images/placeholder-image-square.jpg" alt="placeholder-image-square">
+            </div>
+            <div class="column-half">
+              <p>
+                <label for="title">Title</label>
+                <br>
+                <input id="title" class="text" required>
+              </p>
+              <p>
+                <label for="photo">Photo URL</label>
+                <br>
+                <input id="photo" class="text" required>
+              </p>
+            </div>
+          </div>
+          <br>
+          <div class="column-full">
+            <label for="notes">Notes</label>
+          <br>
+            <textarea id="notes" rows="7" class="text" required></textarea>
+          </div>
+          <div class="column-full submit">
           <input id="save" type="submit" value="SAVE">
+          </div>
         </form>
       </div>
     </div>

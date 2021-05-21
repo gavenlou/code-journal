@@ -1,6 +1,51 @@
-.nav {
-  background-color: rgb(179, 31, 179);
-  color: white;
+.image {
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.text {
+  width: 100%;
+}
+
+.bar {
+  background-color: rgb(88, 44, 132);
+}
+
+label {
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(238, 238, 238);
+}
+
+input {
+  border-radius: 2px;
+  border: 2px solid lightgrey;
   height: 35px;
-  text-align: center;
+  margin-top: 10px;
+}
+
+textarea {
+  border-radius: 4px;
+  border: 2px solid lightgrey;
+  margin-top: 10px;
+}
+
+#save {
+  background-color: rgb(88, 44, 132);
+  color: white;
+  border: 0 solid rgb(88, 44, 132);
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 12pt;
+}
+
+.submit {
+  text-align: right;
 }

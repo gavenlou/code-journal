@@ -8,6 +8,16 @@
   padding: 0 1.5rem;
 }
 
+.nav {
+  padding: 0 2.25rem;
+  max-width: 575px;
+  margin: auto;
+  color: white;
+  padding-top: 6px;
+  font-size: 14pt;
+  height: 35px;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -19,7 +29,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .container {
+  .container,
+  .nav {
     max-width: 900px;
   }
 
@@ -30,5 +41,17 @@
 
   .column-half {
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .flex {
+    flex-wrap: wrap;
+  }
+
+  .image {
+    width: max-content;
+    height: 300px;
+    object-fit: cover;
   }
 }
