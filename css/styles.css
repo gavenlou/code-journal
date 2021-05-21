@@ -3,6 +3,10 @@
   object-fit: cover;
 }
 
+.center {
+  text-align: center;
+}
+
 .flex {
   display: flex;
 }
