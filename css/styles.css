@@ -33,6 +33,10 @@ ul {
   padding: 0;
 }
 
+li {
+  padding-top: 40px;
+}
+
 label {
   font-size: 16pt;
   font-weight: bold;
