@@ -17,13 +17,13 @@
 <body>
   <header class="bar">
     <nav class="nav">
-      Code Journal
+      <span>Code Journal</span>
+      <a id="entryView" class="subnav" onclick="viewSwap('entries')">Entries</a>
     </nav>
   </header>
   <main class="container">
-    <div class="row">
       <div data-view="entry-form" class="column-full">
-        <h2>New Entry</h2>
+        <h1>New Entry</h1>
         <form>
           <div class="flex">
             <div class="column-half center">
@@ -53,6 +53,19 @@
           </div>
         </form>
       </div>
+
+    <div data-view="entries" class="column-full">
+      <div class="flex space-between">
+        <h1>Entries</h1>
+        <button class="button" onclick="viewSwap('entry-form')">NEW</button>
+      </div>
+      <div class="empty">
+        <p>No entries have been recorded.</p>
+      </div>
+      <ul>
+        <li class="flex">
+        </li>
+      </ul>
     </div>
   </main>
   <script src="js/data.js"></script>

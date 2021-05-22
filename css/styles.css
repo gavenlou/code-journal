@@ -19,6 +19,24 @@
   background-color: rgb(88, 44, 132);
 }
 
+.subnav {
+  padding-left: 10px;
+  font-size: 12pt;
+}
+
+.space-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  padding-top: 40px;
+}
+
 label {
   font-size: 16pt;
   font-weight: bold;
@@ -42,13 +60,29 @@ textarea {
   margin-top: 10px;
 }
 
-#save {
+#save,
+.button {
   background-color: rgb(88, 44, 132);
   color: white;
   border: 0 solid rgb(88, 44, 132);
   border-radius: 4px;
   padding: 0 15px;
   font-size: 12pt;
+}
+
+.button {
+  height: 30px;
+  width: 60px;
+  padding: 0;
+}
+
+.subnav:hover,
+.button:hover {
+  cursor: pointer;
+}
+
+.empty {
+  text-align: center;
 }
 
 .submit {
