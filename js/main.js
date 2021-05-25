@@ -38,6 +38,10 @@ $form.addEventListener('submit', function () {
 
 $new.addEventListener('click', function () {
   data.editing = null;
+  $form.elements.title.value = '';
+  $form.elements.photo.value = '';
+  photo.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $form.elements.notes.value = '';
 });
 
 $uList.addEventListener('click', function () {
