@@ -4,7 +4,7 @@ var data = {
   view: 'entry-form',
   entries: [],
   editing: null,
-  nextEntryId: 1
+  nextEntryId: 0
 };
 
 var previousData = localStorage.getItem('javascript-local-storage');
