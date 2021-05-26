@@ -5,6 +5,10 @@ var photoUrl = document.querySelector('#photo');
 var photo = document.querySelector('.image');
 var $uList = document.querySelector('ul');
 var $new = document.querySelector('#new');
+var $delete = document.querySelector('#delete');
+var $modal = document.querySelector('.modal');
+var $cancel = document.querySelector('.cancel');
+var $confirm = document.querySelector('.confirm');
 
 photoUrl.addEventListener('input', function () {
   photo.setAttribute('src', event.target.value);
@@ -42,6 +46,26 @@ $new.addEventListener('click', function () {
   $form.elements.photo.value = '';
   photo.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.elements.notes.value = '';
+
+  $delete.className = 'delete hidden';
+});
+
+$delete.addEventListener('click', function () {
+  $modal.className = 'modal';
+});
+
+$cancel.addEventListener('click', function () {
+  $modal.className = 'modal hidden';
+});
+
+$confirm.addEventListener('click', function () {
+  data.entries.splice(data.editing.entryID, 1);
+  data.nextEntryId--;
+  for (var i = data.nextEntryId; i > data.editing.entryID; i--) {
+    data.entries[i - 1].entryID = i - 1;
+  }
+  $modal.className = 'modal hidden';
+  viewSwap('entries');
 });
 
 $uList.addEventListener('click', function () {
@@ -53,6 +77,8 @@ $uList.addEventListener('click', function () {
   $form.elements.photo.value = data.editing.photoUrl;
   photo.setAttribute('src', data.editing.photoUrl);
   $form.elements.notes.value = data.editing.notes;
+
+  $delete.className = 'delete';
 });
 
 function renderEntry(entry) {
@@ -103,6 +129,7 @@ function viewSwap(view) {
   data.view = view;
   var $views = document.querySelectorAll('[data-view]');
   if (view === 'entries') {
+    data.editing = null;
     if (data.nextEntryId > 0) {
       document.querySelector('.empty').className = 'empty hidden';
     } else document.querySelector('.empty').className = 'empty';
@@ -121,4 +148,17 @@ function viewSwap(view) {
   }
 
 }
-document.addEventListener('DOMContentLoaded', viewSwap(data.view));
+function reload() {
+  if (data.view === 'entry-form' && data.editing !== null) {
+    $form.elements.title.value = data.editing.title;
+    $form.elements.photo.value = data.editing.photoUrl;
+    photo.setAttribute('src', data.editing.photoUrl);
+    $form.elements.notes.value = data.editing.notes;
+    $delete.className = 'delete';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  viewSwap(data.view);
+  reload();
+});
