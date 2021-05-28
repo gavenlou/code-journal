@@ -9,6 +9,7 @@ var $delete = document.querySelector('#delete');
 var $modal = document.querySelector('.modal');
 var $cancel = document.querySelector('.cancel');
 var $confirm = document.querySelector('.confirm');
+var $searchBar = document.querySelector('#search');
 
 photoUrl.addEventListener('input', function () {
   photo.setAttribute('src', event.target.value);
@@ -80,6 +81,27 @@ $uList.addEventListener('click', function () {
 
   $delete.className = 'delete';
 });
+
+$searchBar.addEventListener('keydown', function () {
+  if (event.key === 'Enter') searchEntries();
+});
+
+function searchEntries() {
+  if ($searchBar.value === '') return viewSwap('entries');
+  if (data.view !== 'entries') viewSwap('entries');
+  var search = $searchBar.value.toLowerCase();
+  while ($uList.firstChild) {
+    $uList.removeChild($uList.firstChild);
+  }
+  for (var i = data.entries.length - 1; i >= 0; i--) {
+    if (data.entries[i].title.toLowerCase() === search) {
+      $uList.appendChild(renderEntry(data.entries[i]));
+    }
+    if (!$uList.firstChild) document.querySelector('.empty').className = 'empty';
+    else document.querySelector('.empty').className = 'empty hidden';
+  }
+  $searchBar.value = '';
+}
 
 function renderEntry(entry) {
 
