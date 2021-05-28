@@ -147,3 +147,14 @@ button:hover {
   padding: 6px 8px;
   font-weight: bold;
 }
+
+.searchBar {
+  height: auto;
+  font-size: 12pt;
+  width: 300px;
+}
+
+.searchButton {
+  height: auto;
+  font-size: 12pt;
+}
